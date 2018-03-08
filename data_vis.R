@@ -25,7 +25,7 @@ res <- dbscan(as.matrix(cbind(crash$Longitude, crash$Latitude)), eps = .5/69,
 
 crash$cluster <- res$cluster
 
-qmap('houston') +
+qmap('Houston') +
   geom_density2d(data = crash,
                  aes(Longitude, Latitude)) +
   stat_density2d(data = crash[crash$cluster != 0,], 
